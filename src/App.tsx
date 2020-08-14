@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { FC } from 'react';
+import { Switch, Route } from 'react-router-dom';
+import Navbar from './components/navbar/Navbar';
+import MainPage from './pages/main/MainPage';
+import CreatePostPage from './pages/create_new/CreatePostPage';
+import PostPage from './pages/post/PostPage';
 
-function App() {
+const App: FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div>
+      <header>
+        <Navbar />
       </header>
+
+      <main>
+        <Switch>
+          <Route exact path="/" component={MainPage} />
+          <Route path="/posts/new" component={CreatePostPage} />
+          <Route path="/posts/:id" component={PostPage} />
+        </Switch>
+      </main>
     </div>
   );
-}
+};
 
 export default App;
