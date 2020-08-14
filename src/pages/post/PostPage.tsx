@@ -93,7 +93,7 @@ const Title = styled.span`
   font-size: 1.3rem;
   font-weight: bold;
   text-align: center;
-  margin: 20px 0;
+  margin: 20px 12%;
 `;
 
 const Body = styled.span`
